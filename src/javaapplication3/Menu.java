@@ -10,7 +10,8 @@ public class Menu {
 		ConversorMoneda cm = new ConversorMoneda();
 		ConversorTemperatura ct = new ConversorTemperatura();
                 ConversorMedidas cme = new ConversorMedidas();
-                
+                IconTest icon = new IconTest();
+        JOptionPane.showMessageDialog(null, "Conversor Monedas , Temperaturas y Medidas Alura Oracle", "Conversor Alura", JOptionPane.DEFAULT_OPTION, icon);
 		
 		while(true) {
 			
