@@ -56,7 +56,7 @@ public class Menu {
 				if(ct.ValidarNumero(input) == true) {
 					float MedidasInput = (float)Float.parseFloat(input);
 					float total = (float) cme.ConversorMedidas(MedidasInput);
-					JOptionPane.showMessageDialog(null, "Tenes " + Math.round(total * 100) / 100f + " centimetros ");
+					JOptionPane.showMessageDialog(null, "Tenes " + Math.round (total * 100)/100f );
 					
 					float repuesta = JOptionPane.showConfirmDialog(null, "Desea realizar otra conversion?");
 					if(JOptionPane.OK_OPTION == repuesta) {
