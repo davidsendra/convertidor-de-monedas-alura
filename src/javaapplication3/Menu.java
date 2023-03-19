@@ -9,11 +9,14 @@ public class Menu {
 		
 		ConversorMoneda cm = new ConversorMoneda();
 		ConversorTemperatura ct = new ConversorTemperatura();
+                ConversorMedidas cme = new ConversorMedidas();
+                IconTest icon = new IconTest();
+        JOptionPane.showMessageDialog(null, "Conversor Monedas , Temperaturas y Medidas Alura Oracle", "Conversor Alura", JOptionPane.DEFAULT_OPTION, icon);
 		
 		while(true) {
 			
 			String opciones = (JOptionPane.showInputDialog(null, "Seleccione una opcion de conversion", "Menu",
-				     JOptionPane.QUESTION_MESSAGE,null,new Object[] {"Conversor de Moneda", "Conversor de Temperatura"},          	
+				     JOptionPane.PLAIN_MESSAGE,null,new Object[] {"Conversor de Moneda", "Conversor de Temperatura", "Conversor de Medidas"},          	
 				     "Selecciona")).toString();
 			
 			if(opciones == "Conversor de Moneda") {
@@ -31,7 +34,7 @@ public class Menu {
 						break;
 					}
 				}
-			}
+			}//1
 			else if(opciones == "Conversor de Temperatura") {
 				String input = JOptionPane.showInputDialog("Ingresa el valor de la temperatura que deseas convertir: ");
 				if(ct.ValidarNumero(input) == true) {
@@ -42,16 +45,44 @@ public class Menu {
 					float repuesta = JOptionPane.showConfirmDialog(null, "Desea realizar otra conversion?");
 					if(JOptionPane.OK_OPTION == repuesta) {
 						System.out.println("Selecciona opcion afirmativa");
+                                                
 					}else {
 						JOptionPane.showMessageDialog(null, "Programa Terminado");
 						break;
 					}
 				}
-			}
+			}//2
+                        else if(opciones == "Conversor de Medidas") {
+				String input = JOptionPane.showInputDialog("Ingresa el valor de la Medida que deseas convertir: ");
+				if(ct.ValidarNumero(input) == true) {
+					float MedidasInput = (float)Float.parseFloat(input);
+					float total = (float) cme.ConversorMedidas(MedidasInput);
+					JOptionPane.showMessageDialog(null, "Tenes " + Math.round (total * 100)/100f );
+					
+					float repuesta = JOptionPane.showConfirmDialog(null, "Desea realizar otra conversion?");
+					if(JOptionPane.OK_OPTION == repuesta) {
+						System.out.println("Selecciona opcion afirmativa");
+                                                
+					}else {
+						JOptionPane.showMessageDialog(null, "Programa Terminado");
+						break;
+					}
+				}
+			}//2
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
 			 
 		}
-		
-		
-	}
+                        }
+                
+                }
+        
 	
-}
+	
